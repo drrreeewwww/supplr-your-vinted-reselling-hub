@@ -1,6 +1,7 @@
 import { BookOpen, CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { useCart } from "@/context/CartContext";
 
 const features = [
   "Complete beginner-friendly walkthrough",
@@ -12,7 +13,10 @@ const features = [
 ];
 
 const GuideSection = () => {
+  const { addItem } = useCart();
+  
   const handlePurchase = () => {
+    addItem({ id: "guide-vinted", title: "The Definitive Guide to Vinted Reselling", price: 12.99 });
     toast.success("Guide added to cart!", {
       description: "£12.99",
     });
