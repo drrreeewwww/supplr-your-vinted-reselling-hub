@@ -1,10 +1,14 @@
 import { FileText, Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { useCart } from "@/context/CartContext";
 
 const SupplierLists = () => {
-  const handlePurchase = (list: string, price: number) => {
-    toast.success(`${list} added to cart!`, {
+  const { addItem } = useCart();
+  
+  const handlePurchase = (id: string, title: string, price: number) => {
+    addItem({ id, title, price });
+    toast.success(`${title} added to cart!`, {
       description: `£${price.toFixed(2)}`,
     });
   };
@@ -69,7 +73,7 @@ const SupplierLists = () => {
 
             <div className="flex items-center justify-between">
               <span className="text-3xl font-bold text-foreground">£6.99</span>
-              <Button onClick={() => handlePurchase("UK Streetwear Suppliers", 6.99)}>
+              <Button onClick={() => handlePurchase("suppliers-uk", "UK Streetwear Suppliers", 6.99)}>
                 Get List
                 <ArrowRight className="w-4 h-4" />
               </Button>
@@ -119,7 +123,7 @@ const SupplierLists = () => {
                 <span className="text-3xl font-bold text-foreground">£10.99</span>
                 <span className="text-muted-foreground ml-2 line-through">£19.99</span>
               </div>
-              <Button variant="gradient" onClick={() => handlePurchase("Complete Supplier Bundle", 10.99)}>
+              <Button variant="gradient" onClick={() => handlePurchase("suppliers-all", "Complete Supplier Bundle", 10.99)}>
                 Get Bundle
                 <ArrowRight className="w-4 h-4" />
               </Button>

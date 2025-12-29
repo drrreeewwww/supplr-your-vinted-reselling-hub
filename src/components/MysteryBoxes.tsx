@@ -3,24 +3,28 @@ import ProductCard from "./ProductCard";
 
 const boxes = [
   {
+    id: "box-starter",
     title: "Starter Box",
     description: "Perfect for beginners. 5-8 items with guaranteed profit potential.",
     price: 25,
     badge: "Entry Level",
   },
   {
+    id: "box-standard",
     title: "Standard Box",
     description: "10-15 quality items. Mix of brands with strong resale value.",
     price: 50,
     popular: true,
   },
   {
+    id: "box-premium",
     title: "Premium Box",
     description: "15-20 premium items. Designer and sought-after streetwear pieces.",
     price: 70,
     badge: "Best Value",
   },
   {
+    id: "box-elite",
     title: "Elite Box",
     description: "20-25 hand-picked items. Rare finds and high-profit potential pieces.",
     price: 90,

@@ -1,9 +1,11 @@
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/context/CartContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { totalItems, setIsOpen: setCartOpen } = useCart();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
@@ -35,11 +37,13 @@ const Navbar = () => {
 
           {/* Cart Button */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline" size="icon" className="relative">
+            <Button variant="outline" size="icon" className="relative" onClick={() => setCartOpen(true)}>
               <ShoppingBag className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">
-                0
-              </span>
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
             </Button>
           </div>
 
