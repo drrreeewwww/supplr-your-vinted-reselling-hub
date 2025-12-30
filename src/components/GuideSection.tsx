@@ -5,7 +5,7 @@ import { useCart } from "@/context/CartContext";
 
 const features = [
   "Complete beginner-friendly walkthrough",
-  "Sourcing strategies that work in 2024",
+  "Sourcing strategies that work in 2025",
   "Pricing formulas for maximum profit",
   "How to build a 5-star seller rating",
   "Shipping & packaging tips",

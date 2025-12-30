@@ -55,7 +55,7 @@ const SupplierLists = () => {
             <ul className="space-y-3 mb-8">
               <li className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-primary" />
-                <span className="text-foreground">20+ verified suppliers</span>
+                <span className="text-foreground">10 verified suppliers</span>
               </li>
               <li className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-primary" />
@@ -67,7 +67,7 @@ const SupplierLists = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-primary" />
-                <span className="text-foreground">Lifetime updates</span>
+                <span className="text-foreground">Occasional updates</span>
               </li>
             </ul>
 
@@ -120,10 +120,10 @@ const SupplierLists = () => {
 
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-3xl font-bold text-foreground">£10.99</span>
-                <span className="text-muted-foreground ml-2 line-through">£19.99</span>
+                <span className="text-3xl font-bold text-foreground">£12.99</span>
+                <span className="text-muted-foreground ml-2 line-through">£17.99</span>
               </div>
-              <Button variant="gradient" onClick={() => handlePurchase("suppliers-all", "Complete Supplier Bundle", 10.99)}>
+              <Button variant="gradient" onClick={() => handlePurchase("suppliers-all", "Complete Supplier Bundle", 12.99)}>
                 Get Bundle
                 <ArrowRight className="w-4 h-4" />
               </Button>
