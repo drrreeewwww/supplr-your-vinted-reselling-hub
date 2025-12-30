@@ -14,12 +14,9 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ id, title, description, price, image, badge, popular }: ProductCardProps) => {
-  const { addItem } = useCart();
-  
-  const handleAddToCart = () => {
-    addItem({ id, title, price });
-    toast.success(`${title} added to cart!`, {
-      description: `£${price.toFixed(2)}`,
+  const handleOutOfStock = () => {
+    toast.info("Currently out of stock", {
+      description: "Check back soon for availability!",
     });
   };
 
@@ -60,9 +57,8 @@ const ProductCard = ({ id, title, description, price, image, badge, popular }: P
           <span className="text-2xl font-bold text-foreground">
             £{price.toFixed(2)}
           </span>
-          <Button onClick={handleAddToCart} size="sm">
-            <ShoppingCart className="w-4 h-4" />
-            Add to Cart
+          <Button onClick={handleOutOfStock} size="sm" disabled className="opacity-60">
+            Out of Stock
           </Button>
         </div>
       </div>
