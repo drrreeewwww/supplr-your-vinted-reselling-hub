@@ -13,12 +13,9 @@ const features = [
 ];
 
 const GuideSection = () => {
-  const { addItem } = useCart();
-  
-  const handlePurchase = () => {
-    addItem({ id: "guide-vinted", title: "The Definitive Guide to Vinted Reselling", price: 12.99 });
-    toast.success("Guide added to cart!", {
-      description: "£12.99",
+  const handleOutOfStock = () => {
+    toast.info("Currently out of stock", {
+      description: "Check back soon for availability!",
     });
   };
 
@@ -60,9 +57,8 @@ const GuideSection = () => {
                 <span className="text-3xl font-bold text-foreground">£12.99</span>
                 <span className="text-muted-foreground ml-2 line-through">£24.99</span>
               </div>
-              <Button variant="hero" onClick={handlePurchase}>
-                Get the Guide
-                <ArrowRight className="w-5 h-5" />
+              <Button variant="hero" onClick={handleOutOfStock} disabled className="opacity-60">
+                Out of Stock
               </Button>
             </div>
           </div>

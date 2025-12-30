@@ -4,12 +4,13 @@ import { toast } from "sonner";
 import { useCart } from "@/context/CartContext";
 
 const SupplierLists = () => {
-  const { addItem } = useCart();
+  const handlePurchaseBundle = () => {
+    window.open("https://buy.stripe.com/9B614pdlO1N023z2cW5sA00", "_blank");
+  };
   
-  const handlePurchase = (id: string, title: string, price: number) => {
-    addItem({ id, title, price });
-    toast.success(`${title} added to cart!`, {
-      description: `£${price.toFixed(2)}`,
+  const handleOutOfStock = () => {
+    toast.info("Currently out of stock", {
+      description: "Check back soon for availability!",
     });
   };
 
@@ -73,9 +74,8 @@ const SupplierLists = () => {
 
             <div className="flex items-center justify-between">
               <span className="text-3xl font-bold text-foreground">£6.99</span>
-              <Button onClick={() => handlePurchase("suppliers-uk", "UK Streetwear Suppliers", 6.99)}>
-                Get List
-                <ArrowRight className="w-4 h-4" />
+              <Button onClick={handleOutOfStock} disabled className="opacity-60">
+                Out of Stock
               </Button>
             </div>
           </div>
@@ -123,7 +123,7 @@ const SupplierLists = () => {
                 <span className="text-3xl font-bold text-foreground">£12.99</span>
                 <span className="text-muted-foreground ml-2 line-through">£17.99</span>
               </div>
-              <Button variant="gradient" onClick={() => handlePurchase("suppliers-all", "Complete Supplier Bundle", 12.99)}>
+              <Button variant="gradient" onClick={handlePurchaseBundle}>
                 Get Bundle
                 <ArrowRight className="w-4 h-4" />
               </Button>
