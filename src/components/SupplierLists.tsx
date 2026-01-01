@@ -5,7 +5,9 @@ import { useCart } from "@/context/CartContext";
 
 const SupplierLists = () => {
   const handlePurchaseBundle = () => {
-    window.open("https://buy.stripe.com/9B614pdlO1N023z2cW5sA00", "_blank");
+    toast.info("Card payment available", {
+      description: "Contact us to complete your purchase!",
+    });
   };
   
   const handleOutOfStock = () => {
@@ -98,7 +100,7 @@ const SupplierLists = () => {
             <ul className="space-y-3 mb-8">
               <li className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-primary" />
-                <span className="text-foreground">100+ verified suppliers</span>
+                <span className="text-foreground">50+ verified suppliers</span>
               </li>
               <li className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-primary" />
@@ -111,10 +113,6 @@ const SupplierLists = () => {
               <li className="flex items-center gap-3">
                 <Check className="w-5 h-5 text-primary" />
                 <span className="text-foreground">Priority support</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Check className="w-5 h-5 text-primary" />
-                <span className="text-foreground">Exclusive Discord access</span>
               </li>
             </ul>
 

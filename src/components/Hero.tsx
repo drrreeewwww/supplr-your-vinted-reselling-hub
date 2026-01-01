@@ -32,13 +32,17 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-            <Button variant="hero" size="xl">
-              Explore Products
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-            <Button variant="outline" size="xl">
-              Learn More
-            </Button>
+            <a href="#products">
+              <Button variant="hero" size="xl">
+                Explore Products
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </a>
+            <a href="#guide">
+              <Button variant="outline" size="xl">
+                Learn More
+              </Button>
+            </a>
           </div>
 
           {/* Stats */}
